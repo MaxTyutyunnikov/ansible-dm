@@ -40,6 +40,17 @@
   notify: [ 'Restart display-manager' ]
 
 - block:
+
+    - name: Copy file gnome-classic.desktop to gnome-classic.desktop.bak (xsessions)
+      copy: remote_src=True src=/usr/share/xsessions/gnome-classic.desktop  dest=/usr/share/xsessions/gnome-classic.desktop.bak
+    - name: Remove gnome-classic.desktop (xsessions)
+      file: path=/usr/share/xsessions/gnome-classic.desktop state=absent
+
+    - name: Copy file gnome-classic.desktop to gnome-classic.desktop.bak (wayland-sessions)
+      copy: remote_src=True src=/usr/share/wayland-sessions/gnome-classic.desktop  dest=/usr/share/wayland-sessions/gnome-classic.desktop.bak
+    - name: Remove gnome-classic.desktop (wayland-sessions)
+      file: path=/usr/share/wayland-sessions/gnome-classic.desktop state=absent
+
     - name: Copy file gnome.desktop to gnome.desktop.bak (xsessions)
       copy: remote_src=True src=/usr/share/xsessions/gnome.desktop  dest=/usr/share/xsessions/gnome.desktop.bak
     - name: Remove gnome.desktop (xsessions)
@@ -49,5 +60,6 @@
       copy: remote_src=True src=/usr/share/wayland-sessions/gnome.desktop  dest=/usr/share/wayland-sessions/gnome.desktop.bak
     - name: Remove gnome.desktop (wayland-sessions)
       file: path=/usr/share/wayland-sessions/gnome.desktop state=absent
+
   ignore_errors: true
 
