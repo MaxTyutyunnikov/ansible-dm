@@ -15,3 +15,13 @@ greeter-hide-users = {{ (not dm__greeter_show_user_list|bool) | lower }}
 user-session = {{ dm_user_session }}
 {% endif %}
 {{ dm__lightdm_seat_star_raw }}
+
+{% if dm__greeter_lightdm_name is defined %}
+greeter-session = {{ dm__greeter_lightdm_name }}
+{% endif %}
+
+[LightDM]
+
+{% if (dm__wayland_enable is defined) and (dm__wayland_enable|bool) %}
+sessions-directory=/usr/share/lightdm/sessions:/usr/share/xsessions:/usr/share/wayland-sessions
+{% endif %}

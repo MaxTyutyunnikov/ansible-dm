@@ -6,6 +6,10 @@
 
 [daemon]
 
+{% if dm__wayland_enable is defined %}
+WaylandEnable = {{ dm__wayland_enable }}
+{% endif %}
+
 {% if dm__automatic_login_enabled|bool %}
 {%   if dm__automatic_login_time_delay|int == 0 %}
 # Enabling automatic login

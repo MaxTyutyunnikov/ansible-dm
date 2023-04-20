@@ -48,7 +48,35 @@ dm__packages: []
 # .. envvar:: dm__lightdm_packages [[[
 #
 # Additional list of packages to install when LightDM_ is selected.
-dm__lightdm_packages: []
+dm__lightdm_packages:
+    - lightdm-gtk-greeter
+    - arctica-greeter
+    - arctica-greeter-guest-session
+    - arctica-greeter-remote-logon
+    - arctica-greeter-theme-debian
+#    - arctica-greeter-theme-debian-futureprototype
+#    - arctica-greeter-theme-debian-softwaves
+    - lightdm-autologin-greeter
+    - lightdm-gtk-greeter
+    - lightdm-gtk-greeter-settings
+    - lightdm-settings
+    - lightdm-vala
+    - lomiri-greeter
+    - materia-gtk-theme
+    - orchis-gtk-theme
+    - slick-greeter
+    - ukui-greeter
+#    - lightdm-deepin-greeter
+#    - lightdm-pantheon-greeter
+#    - lightdm-slick-greeter
+#    - lightdm-webkit2-greeter
+#    - lightdm-webkit-theme-litarvan
+#    - lightdm-unity-greeterAUR
+#    - lightdm-mini-greeterAUR
+#    - web-greeter-theme-shikaiAUR
+#    - lightdm-webkit-theme-aetherAUR
+#    - lightdm-elephant-greeter-gitAUR
+#    - web-greeterAUR
 
                                                                    # ]]]
 # .. envvar:: dm__gdm_packages [[[
@@ -133,6 +161,9 @@ dm__greeter_lightdm_indicators: '~host;~spacer;~clock;~spacer;~language;~session
 # Should a list of users be shown?
 dm__greeter_show_user_list: False
                                                                    # ]]]
+
+#dm__greeter_lightdm_name: lightdm-gtk-greeter
+dm__greeter_lightdm_name: arctica-greeter
                                                                    # ]]]
 # Debugging [[[
 # -------------
@@ -193,3 +224,5 @@ dm__binary_path: '/usr/sbin/{{ dm__package_map[dm__name] }}'
                                                                    # ]]]
                                                                    # ]]]
                                                                    # ]]]
+
+dm__remove_packages: false
