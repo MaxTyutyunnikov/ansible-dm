@@ -61,7 +61,7 @@ dm__lightdm_packages:
     - lightdm-gtk-greeter-settings
     - lightdm-settings
     - lightdm-vala
-    - lomiri-greeter
+#    - lomiri-greeter
     - materia-gtk-theme
     - orchis-gtk-theme
     - slick-greeter
